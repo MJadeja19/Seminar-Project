@@ -1,0 +1,72 @@
+{
+    "features": [
+        "Tool_Diameter_mm",
+        "Spindle_Speed_RPM",
+        "Feed_Rate_mm_min",
+        "Feed_per_Tooth_um",
+        "Depth_of_Cut_um",
+        "Width_of_Cut_um",
+        "Tool_Wear_um"
+    ],
+    "targets": [
+        "Surface_Roughness_Ra_um",
+        "Rq_um",
+        "Rz_um"
+    ],
+    "display_names": [
+        "Ra",
+        "Rq",
+        "Rz"
+    ],
+    "training_rows": 8000,
+    "testing_rows": 2000,
+    "dataset_rows_used": 10000,
+    "feature_ranges": {
+        "Tool_Diameter_mm": {
+            "min": 0.1,
+            "max": 1.0
+        },
+        "Spindle_Speed_RPM": {
+            "min": 10001.0,
+            "max": 79998.0
+        },
+        "Feed_Rate_mm_min": {
+            "min": 10.02,
+            "max": 799.99
+        },
+        "Feed_per_Tooth_um": {
+            "min": 0.069,
+            "max": 39.317
+        },
+        "Depth_of_Cut_um": {
+            "min": 1.0,
+            "max": 50.0
+        },
+        "Width_of_Cut_um": {
+            "min": 5.01,
+            "max": 199.98
+        },
+        "Tool_Wear_um": {
+            "min": 0.0,
+            "max": 25.0
+        }
+    },
+    "test_metrics": {
+        "Ra": {
+            "r2": 0.9789341729538189,
+            "mae_um": 0.038386285559905496,
+            "rmse_um": 0.053183453491616066
+        },
+        "Rq": {
+            "r2": 0.9776658855763252,
+            "mae_um": 0.04952042826484278,
+            "rmse_um": 0.06669452455200778
+        },
+        "Rz": {
+            "r2": 0.9662102306454128,
+            "mae_um": 0.24667564080326546,
+            "rmse_um": 0.33582676521315824
+        }
+    },
+    "dataset_note": "The supplied workbook identifies these 10,000 rows as synthetic, not real experimental measurements."
+}
